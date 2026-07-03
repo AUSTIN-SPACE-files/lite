@@ -1,0 +1,17 @@
+{% set socialIcons = {
+  "facebook": '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9v-2.89h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg>',
+  "instagram": '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>',
+  "twitter": '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 3H21.5l-5.6 6.4L22.5 21h-6.2l-4.9-6.4L5.7 21H3.1l6-6.9L2.5 3h6.3l4.4 5.8Zm-1 16.2h1.7L7.2 4.7H5.4Z"/></svg>',
+  "linkedin": '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM3.2 8.75h3.5V21H3.2ZM9.75 8.75h3.35v1.68h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.32 4.18 5.35V21h-3.5v-6.28c0-1.5-.03-3.43-2.09-3.43-2.1 0-2.42 1.64-2.42 3.32V21h-3.5Z"/></svg>',
+  "youtube": '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7a2.9 2.9 0 0 0-2-2C17.9 5 12 5 12 5s-5.9 0-7.6.3a2.9 2.9 0 0 0-2 2C2 8.8 2 12 2 12s0 3.2.4 4.7a2.9 2.9 0 0 0 2 2C6.1 19 12 19 12 19s5.9 0 7.6-.3a2.9 2.9 0 0 0 2-2C22 15.2 22 12 22 12ZM10 15.5v-7l6 3.5Z"/></svg>',
+  "tiktok": '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2.3 2 4 4.5 4.2v3c-1.6 0-3-.5-4.2-1.4v6.7a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 1 0 1.6 2.3V3Z"/></svg>'
+} %}
+<div class="social-row">
+  {% for platform, url in social %}
+    {% if socialIcons[platform] %}
+    <a href="{{ url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ platform | capitalize }}">
+      {{ socialIcons[platform] | safe }}
+    </a>
+    {% endif %}
+  {% endfor %}
+</div>

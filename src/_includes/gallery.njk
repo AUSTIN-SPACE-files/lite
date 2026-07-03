@@ -1,0 +1,10 @@
+<section id="gallery">
+  <div class="container">
+    <h2>Take a Look Inside</h2>
+    <div class="gallery-grid">
+      {% for item in gallery %}
+      <img src="/assets/images/gallery/{{ item.image }}" alt="{{ item.alt }}">
+      {% endfor %}
+    </div>
+  </div>
+</section>

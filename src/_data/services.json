@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "coffee",
+    "title": "Small-Batch Roasts",
+    "blurb": "We roast in-house every week and rotate single-origin beans from farms we work with directly."
+  },
+  {
+    "icon": "cake",
+    "title": "Fresh Pastries",
+    "blurb": "Croissants, scones, and loaf cakes baked from scratch each morning — nothing shipped in frozen."
+  },
+  {
+    "icon": "wifi",
+    "title": "Room to Work",
+    "blurb": "Free wifi, plenty of outlets, and a quiet back room if you need to take a call or settle in for the day."
+  },
+  {
+    "icon": "users",
+    "title": "Private Catering",
+    "blurb": "Coffee service and pastry boxes for meetings, showers, and small events around Portland."
+  }
+]

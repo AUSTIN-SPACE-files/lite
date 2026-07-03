@@ -1,0 +1,61 @@
+---
+layout: base.njk
+---
+<section class="hero">
+  <div class="container">
+    <h1>{{ site.businessName }}</h1>
+    <p>{{ site.tagline }}</p>
+  </div>
+</section>
+
+{% include "services.njk" %}
+{% include "gallery.njk" %}
+{% include "reviews.njk" %}
+
+<section class="contact-section" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <h2>Visit or Say Hello</h2>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp-field">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <address>
+        {{ site.address }}<br>
+        {{ site.phone }} &middot; {{ site.email }}<br><br>
+        {% for slot in site.hours %}
+          {{ slot.day }}: {{ slot.time }}<br>
+        {% endfor %}
+      </address>
+    </div>
+
+    <div class="map-wrap">
+      <iframe
+        src="https://www.google.com/maps?q={{ site.address | urlencode }}&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Map to {{ site.businessName }}">
+      </iframe>
+    </div>
+  </div>
+</section>

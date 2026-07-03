@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.metaTitle }}</title>
+  <meta name="description" content="{{ site.metaDescription }}">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    :root {
+      --color-primary: {{ site.colorPrimary }};
+      --color-accent: {{ site.colorAccent }};
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="brand-name"><a href="/">{{ site.businessName }}</a></p>
+      <p>{{ site.phone }}</p>
+    </div>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="brand-name">{{ site.businessName }}</p>
+      {% include "social.njk" %}
+      <p class="footer-note">&copy; {% year %} {{ site.businessName }}. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

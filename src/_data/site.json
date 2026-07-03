@@ -1,0 +1,16 @@
+{
+  "businessName": "Maple & Bean Coffee Co.",
+  "tagline": "Small-batch coffee, baked fresh, brewed slow.",
+  "phone": "(503) 555-0142",
+  "email": "hello@mapleandbean.example",
+  "address": "128 Willow Street, Portland, OR 97205",
+  "hours": [
+    { "day": "Monday – Friday", "time": "7:00am – 4:00pm" },
+    { "day": "Saturday", "time": "8:00am – 3:00pm" },
+    { "day": "Sunday", "time": "Closed" }
+  ],
+  "metaTitle": "Maple & Bean Coffee Co. | Portland, OR",
+  "metaDescription": "A neighbourhood coffee house in Portland serving small-batch roasts, fresh pastries, and a warm place to sit down.",
+  "colorPrimary": "#4b3621",
+  "colorAccent": "#c98a3b"
+}
