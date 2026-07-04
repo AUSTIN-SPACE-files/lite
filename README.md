@@ -6,7 +6,7 @@ A reusable one-page business website template built on [Eleventy 3](https://www.
 
 1. Clone/copy this repo into a new project for the client.
 2. Edit the files in `src/_data/`:
-   - `site.json` — business name, tagline, contact info, address, opening hours, meta tags, and the two brand colours (`colorPrimary` / `colorAccent`, used as CSS custom properties across the whole site).
+   - `site.json` — business name (split into `businessName` + `businessDescriptor`, e.g. "Maple & Bean" + "Coffee Co." — always used together, never store the combined name as a third field), tagline, contact info, address, opening hours, meta tags (`metaTitleSuffix` is optional — omit it and the `<title>` tag just drops the trailing " | "), and the two brand colours (`colorPrimary` / `colorAccent`, used as CSS custom properties across the whole site). The logo/hero lockup scales as one unit off a single `--logo-size` / `--hero-heading-size` CSS variable in `style.css` — tune that one value, don't hand-tune the two lines separately.
    - `services.json` — array of `{ icon, title, blurb }`. Available `icon` keys are defined in `src/_includes/services.njk` (`coffee`, `cake`, `wifi`, `users`).
    - `reviews.json` — array of `{ name, quote, rating }` (rating 1–5).
    - `gallery.json` — array of `{ image, alt }`. `image` is just the filename inside `src/assets/images/gallery/`.

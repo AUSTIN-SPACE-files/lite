@@ -1,17 +1,18 @@
 {
-  "businessName": "Maple & Bean Coffee Co.",
+  "businessName": "Maple & Bean",
+  "businessDescriptor": "Coffee Co.",
   "tagline": "Small-batch coffee, baked fresh, brewed slow.",
-  "phone": "(503) 555-0142",
-  "email": "hello@mapleandbean.example",
-  "address": "128 Willow Street, Portland, OR 97205",
+  "phone": "01664 727272",
+  "email": "hello@mapleandbean.co.uk",
+  "address": "12 High St, Worcester, UK",
   "heroImage": "hero.jpg",
   "hours": [
-    { "day": "Monday – Friday", "time": "7:00am – 4:00pm" },
-    { "day": "Saturday", "time": "8:00am – 3:00pm" },
+    { "day": "Monday – Friday", "time": "07:00 – 16:00" },
+    { "day": "Saturday", "time": "08:00 – 15:00" },
     { "day": "Sunday", "time": "Closed" }
   ],
-  "metaTitle": "Maple & Bean Coffee Co. | Portland, OR",
-  "metaDescription": "A neighbourhood coffee house in Portland serving small-batch roasts, fresh pastries, and a warm place to sit down.",
+  "metaTitleSuffix": "Worcester, UK",
+  "metaDescription": "A neighbourhood coffee house in Worcester serving small-batch roasts, fresh pastries, and a warm place to sit down.",
   "colorPrimary": "#4b3621",
   "colorAccent": "#c98a3b"
 }

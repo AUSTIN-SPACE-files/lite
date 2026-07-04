@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.metaTitle }}</title>
+  <title>{{ site.businessName }} {{ site.businessDescriptor }}{% if site.metaTitleSuffix %} | {{ site.metaTitleSuffix }}{% endif %}</title>
   <meta name="description" content="{{ site.metaDescription }}">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   <style>
     :root {
       --color-primary: {{ site.colorPrimary }};
@@ -16,7 +19,7 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <p class="brand-name"><a href="/">{{ site.businessName }}</a></p>
+      {% include "logo.njk" %}
       <p>{{ site.phone }}</p>
     </div>
   </header>
@@ -27,9 +30,9 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p class="brand-name">{{ site.businessName }}</p>
+      {% include "logo.njk" %}
       {% include "social.njk" %}
-      <p class="footer-note">&copy; {% year %} {{ site.businessName }}. All rights reserved.</p>
+      <p class="footer-note">&copy; {% year %} {{ site.businessName }} {{ site.businessDescriptor }} &mdash; All rights reserved.</p>
     </div>
   </footer>
 </body>
