@@ -2,7 +2,9 @@
 layout: base.njk
 ---
 <section class="hero">
-  <div class="container">
+  <img class="hero-bg" src="/assets/images/{{ site.heroImage }}" alt="" loading="eager">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
     <h1>{{ site.businessName }}</h1>
     <p>{{ site.tagline }}</p>
   </div>
