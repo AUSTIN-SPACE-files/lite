@@ -276,6 +276,10 @@ section h2 {
   font-size: 0.85rem;
 }
 
+.stat-email.label-mono {
+  text-transform: none;
+}
+
 @media (max-width: 720px) {
   .contact-grid {
     grid-template-columns: 1fr;
