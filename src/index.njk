@@ -1,6 +1,7 @@
 ---
 layout: base.njk
 ---
+{% from "contact-icons.njk" import render as contactIcon %}
 <section class="hero">
   <img class="hero-bg" src="/assets/images/{{ site.heroImage }}" alt="" loading="eager">
   <div class="hero-overlay"></div>
@@ -15,15 +16,15 @@ layout: base.njk
 <section class="contact-stats">
   <div class="container contact-stats-grid">
     <a href="tel:{{ site.phone | replace(' ', '') }}" class="stat-item">
-      <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      {{ contactIcon("phone", "stat-icon") }}
       <span class="stat-text label-mono">{{ site.phone }}</span>
     </a>
     <a href="mailto:{{ site.email }}" class="stat-item">
-      <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      {{ contactIcon("mail", "stat-icon") }}
       <span class="stat-text label-mono stat-email">{{ site.email }}</span>
     </a>
     <div class="stat-item">
-      <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+      {{ contactIcon("map-pin", "stat-icon") }}
       <span class="stat-text label-mono">{{ site.address }}</span>
     </div>
   </div>
@@ -34,42 +35,10 @@ layout: base.njk
 {% include "reviews.njk" %}
 
 <section class="contact-section" id="contact">
-  <div class="container contact-grid">
-    <div>
-      <h2>Visit or Say Hello</h2>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="hp-field">
-          <label>Don't fill this out if you're human: <input name="bot-field"></label>
-        </p>
+  <div class="container">
+    <h2>Visit or Say Hello</h2>
 
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <button type="submit">Send Message</button>
-      </form>
-
-      <address>
-        {{ site.address }}<br>
-        {{ site.phone }} &middot; {{ site.email }}<br><br>
-        {% for slot in site.hours %}
-          {{ slot.day }}: {{ slot.time }}<br>
-        {% endfor %}
-      </address>
-    </div>
-
+    <p class="section-label label-mono">Visit us</p>
     <div class="map-wrap">
       <iframe
         src="https://www.google.com/maps?q={{ site.address | urlencode }}&output=embed"
@@ -77,6 +46,54 @@ layout: base.njk
         referrerpolicy="no-referrer-when-downgrade"
         title="Map to {{ site.businessName }} {{ site.businessDescriptor }}">
       </iframe>
+    </div>
+
+    <div class="contact-grid">
+      <address>
+        <p class="section-label label-mono">Contact details</p>
+        <ul class="contact-list">
+          <li><a href="tel:{{ site.phone | replace(' ', '') }}" class="contact-list-row">{{ contactIcon("phone", "contact-icon", "2.5") }}<span>{{ site.phone }}</span></a></li>
+          <li><a href="mailto:{{ site.email }}" class="contact-list-row">{{ contactIcon("mail", "contact-icon", "2.5") }}<span>{{ site.email }}</span></a></li>
+          <li class="contact-list-row">{{ contactIcon("map-pin", "contact-icon", "2.5") }}<span>{{ site.address }}</span></li>
+        </ul>
+
+        <p class="section-label label-mono">Opening hours</p>
+        <dl class="hours-list">
+          {% for slot in site.hours %}
+          <div class="hours-row">
+            <dt>{{ slot.day }}</dt>
+            <dd>{{ slot.time }}</dd>
+          </div>
+          {% endfor %}
+        </dl>
+      </address>
+
+      <div>
+        <p class="section-label label-mono">Get in touch</p>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hp-field">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          </p>
+
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
   </div>
 </section>

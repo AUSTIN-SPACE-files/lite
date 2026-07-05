@@ -1,3 +1,4 @@
+{% from "brand-icon.njk" import render as brandIcon %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,10 +30,25 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      {% include "logo.njk" %}
-      {% include "social.njk" %}
-      <p class="footer-note">&copy; {% year %} {{ site.businessName }} {{ site.businessDescriptor }} &mdash; All rights reserved.</p>
+    <div class="container footer-main">
+      <div class="footer-texture" aria-hidden="true">
+        {{ brandIcon("footer-watermark-icon") }}
+      </div>
+      <div class="footer-content">
+        {% include "logo.njk" %}
+        <p class="footer-blurb">{{ site.footerBlurb }}</p>
+        {% include "social.njk" %}
+      </div>
+    </div>
+
+    <div class="footer-credit-row">
+      <div class="container footer-credit">
+        <p class="footer-note">&copy; {% year %} {{ site.businessName }} {{ site.businessDescriptor }} &mdash; All rights reserved.</p>
+        <a href="https://austinspace.co.uk" target="_blank" rel="noopener noreferrer" class="credit-logo-link">
+          <span>Site by</span>
+          <img src="/assets/images/AS_Logo.svg" alt="AUSTIN_SPACE" class="credit-logo" eleventy:ignore>
+        </a>
+      </div>
     </div>
   </footer>
 </body>
