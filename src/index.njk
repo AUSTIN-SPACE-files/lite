@@ -17,15 +17,15 @@ layout: base.njk
   <div class="container contact-stats-grid">
     <a href="tel:{{ site.phone | replace(' ', '') }}" class="stat-item">
       {{ contactIcon("phone", "stat-icon") }}
-      <span class="stat-text label-mono">{{ site.phone }}</span>
+      <span class="stat-text">{{ site.phone }}</span>
     </a>
     <a href="mailto:{{ site.email }}" class="stat-item">
       {{ contactIcon("mail", "stat-icon") }}
-      <span class="stat-text label-mono stat-email">{{ site.email }}</span>
+      <span class="stat-text stat-email">{{ site.email }}</span>
     </a>
     <div class="stat-item">
       {{ contactIcon("map-pin", "stat-icon") }}
-      <span class="stat-text label-mono">{{ site.address }}</span>
+      <span class="stat-text">{{ site.address }}</span>
     </div>
   </div>
 </section>
@@ -54,9 +54,9 @@ layout: base.njk
       <address class="card contact-info-card">
         <p class="section-label label-mono">Contact details</p>
         <ul class="contact-list">
-          <li><a href="tel:{{ site.phone | replace(' ', '') }}" class="contact-list-row">{{ contactIcon("phone", "contact-icon", "2.5") }}<span>{{ site.phone }}</span></a></li>
-          <li><a href="mailto:{{ site.email }}" class="contact-list-row">{{ contactIcon("mail", "contact-icon", "2.5") }}<span>{{ site.email }}</span></a></li>
-          <li class="contact-list-row">{{ contactIcon("map-pin", "contact-icon", "2.5") }}<span>{{ site.address }}</span></li>
+          <li><a href="tel:{{ site.phone | replace(' ', '') }}" class="contact-list-row">{{ contactIcon("phone", "contact-icon", "2") }}<span>{{ site.phone }}</span></a></li>
+          <li><a href="mailto:{{ site.email }}" class="contact-list-row">{{ contactIcon("mail", "contact-icon", "2") }}<span>{{ site.email }}</span></a></li>
+          <li class="contact-list-row">{{ contactIcon("map-pin", "contact-icon", "2") }}<span>{{ site.address }}</span></li>
         </ul>
 
         <p class="section-label label-mono">Opening hours</p>

@@ -291,10 +291,6 @@ section h2 {
   font-size: 0.85rem;
 }
 
-.stat-email.label-mono {
-  text-transform: none;
-}
-
 @media (max-width: 720px) {
   .contact-grid {
     grid-template-columns: 1fr;
@@ -371,7 +367,7 @@ section h2 {
 address {
   font-style: normal;
   color: var(--color-text);
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .section-label {
@@ -402,8 +398,8 @@ address {
 }
 
 .contact-icon {
-  width: 1.3em;
-  height: 1.3em;
+  width: 1.15em;
+  height: 1.15em;
   flex-shrink: 0;
 }
 
@@ -416,12 +412,19 @@ address {
 }
 
 .hours-row {
-  display: contents;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  padding-block: 0.15rem;
+}
+
+.hours-row:nth-child(even) {
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .hours-list dt {
   margin: 0;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .hours-list dd {
