@@ -38,18 +38,20 @@ layout: base.njk
   <div class="container">
     <h2>Visit or Say Hello</h2>
 
-    <p class="section-label label-mono">Visit us</p>
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps?q={{ site.address | urlencode }}&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Map to {{ site.businessName }} {{ site.businessDescriptor }}">
-      </iframe>
+    <div class="card map-card">
+      <p class="section-label label-mono">Visit us</p>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps?q={{ site.address | urlencode }}&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map to {{ site.businessName }} {{ site.businessDescriptor }}">
+        </iframe>
+      </div>
     </div>
 
     <div class="contact-grid">
-      <address>
+      <address class="card contact-info-card">
         <p class="section-label label-mono">Contact details</p>
         <ul class="contact-list">
           <li><a href="tel:{{ site.phone | replace(' ', '') }}" class="contact-list-row">{{ contactIcon("phone", "contact-icon", "2.5") }}<span>{{ site.phone }}</span></a></li>
@@ -68,7 +70,7 @@ layout: base.njk
         </dl>
       </address>
 
-      <div>
+      <div class="card contact-form-card">
         <p class="section-label label-mono">Get in touch</p>
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
           <input type="hidden" name="form-name" value="contact">

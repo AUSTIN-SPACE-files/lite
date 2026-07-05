@@ -238,6 +238,17 @@ section h2 {
   background: var(--color-bg-alt);
 }
 
+.card {
+  background: var(--color-bg);
+  border: 0.5px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.map-card {
+  margin-bottom: 2.5rem;
+}
+
 .contact-section h2 {
   text-align: left;
 }
@@ -349,7 +360,6 @@ section h2 {
   overflow: hidden;
   border: 1px solid var(--color-border);
   height: 320px;
-  margin-bottom: 2.5rem;
 }
 
 .map-wrap iframe {
@@ -360,7 +370,6 @@ section h2 {
 
 address {
   font-style: normal;
-  margin-top: 1rem;
   color: var(--color-text);
   font-size: 1.1rem;
 }
