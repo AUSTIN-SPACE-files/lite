@@ -108,6 +108,7 @@ a {
   position: relative;
   height: min(70vh, 600px);
   overflow: hidden;
+  animation-name: none;
 }
 
 .hero-bg {
@@ -359,6 +360,7 @@ section h2 {
   background: var(--color-accent);
   color: #fff;
   padding: 1.5rem 0;
+  animation-name: none;
 }
 
 .contact-stats-grid {
