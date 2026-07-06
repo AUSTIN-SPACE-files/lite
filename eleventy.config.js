@@ -6,6 +6,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/css");
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/vendor");
+  eleventyConfig.addPassthroughCopy("src/assets/js");
 
   eleventyConfig.addAsyncShortcode("largeImageUrl", async function (dir, filename) {
     let metadata = await Image(dir + filename, {

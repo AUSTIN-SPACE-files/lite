@@ -4,6 +4,7 @@
   --color-bg: #fff;
   --color-bg-alt: #f6f4f1;
   --color-border: #e3ddd4;
+  --color-error: #b3261e;
 }
 
 * {
@@ -444,11 +445,30 @@ section h2 {
   transform: translateY(-2px);
 }
 
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* honeypot field, hidden from real users */
 .hp-field {
   position: absolute;
   left: -9999px;
   top: -9999px;
+}
+
+.form-status {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.form-status.is-error {
+  color: var(--color-error);
+}
+
+.form-success {
+  font-size: 1.05rem;
+  color: var(--color-primary);
 }
 
 .map-wrap {

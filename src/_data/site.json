@@ -25,5 +25,7 @@
   "metaDescription": "A neighbourhood coffee house in Worcester serving small-batch roasts, fresh pastries, and a warm place to sit down.",
   "footerBlurb": "Independent coffee shop and café in Worcester serving small-batch roasts, fresh pastries, and space to work.",
   "colorPrimary": "#4b3621",
-  "colorAccent": "#c98a3b"
+  "colorAccent": "#c98a3b",
+  "formWorkerUrl": "https://form-worker.charles-b9c.workers.dev",
+  "turnstileSiteKey": "0x4AAAAAADw3Hb6rRFZpnQ7Y"
 }

@@ -1,5 +1,6 @@
 ---
 layout: base.njk
+hasContactForm: true
 ---
 {% from "contact-icons.njk" import render as contactIcon %}
 <section class="hero">
@@ -53,10 +54,9 @@ layout: base.njk
     <div class="contact-grid">
       <div class="card contact-form-card">
         <p class="section-label label-mono">Get in touch</p>
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
-          <input type="hidden" name="form-name" value="contact">
+        <form name="contact" method="POST" class="contact-form" data-worker-url="{{ site.formWorkerUrl }}">
           <p class="hp-field">
-            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+            <label>Don't fill this out if you're human: <input type="text" name="website" autocomplete="off" tabindex="-1"></label>
           </p>
 
           <div>
@@ -73,6 +73,10 @@ layout: base.njk
             <label for="message" class="field-label">Message</label>
             <textarea id="message" name="message" required></textarea>
           </div>
+
+          <div class="cf-turnstile" data-sitekey="{{ site.turnstileSiteKey }}" data-size="flexible"></div>
+
+          <p class="form-status" role="alert"></p>
 
           <button type="submit">Send Message</button>
         </form>
