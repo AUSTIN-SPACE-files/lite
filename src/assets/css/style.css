@@ -89,6 +89,11 @@ a {
   letter-spacing: 0.08em;
 }
 
+.mono-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0.08em;
+}
+
 .logo-descriptor {
   font-size: 0.4em;
   opacity: 0.85;
@@ -288,7 +293,7 @@ section h2 {
 }
 
 .stat-text {
-  font-size: 0.85rem;
+  font-size: 0.975rem;
 }
 
 @media (max-width: 720px) {
@@ -307,9 +312,9 @@ section h2 {
   gap: 1rem;
 }
 
-.contact-form label {
+.field-label {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   display: block;
   margin-bottom: 0.35rem;
 }
@@ -367,7 +372,7 @@ section h2 {
 address {
   font-style: normal;
   color: var(--color-text);
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .section-label {
@@ -403,32 +408,41 @@ address {
   flex-shrink: 0;
 }
 
+.contact-list-row .mono-value {
+  font-size: 0.85rem;
+}
+
 .hours-list {
   margin: 0;
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 1.5rem;
-  row-gap: 0.35rem;
+  column-gap: 0;
+  row-gap: 0;
 }
 
 .hours-row {
   display: grid;
   grid-template-columns: subgrid;
   grid-column: 1 / -1;
-  padding-block: 0.15rem;
+  padding-block: 0.4rem;
+  border-top: 1px solid #ebe9e5;
 }
 
-.hours-row:nth-child(even) {
-  background: rgba(0, 0, 0, 0.03);
+.hours-row:first-child {
+  border-top: none;
 }
 
 .hours-list dt {
   margin: 0;
-  font-weight: 400;
+  padding-right: 0.75rem;
 }
 
 .hours-list dd {
   margin: 0;
+  padding-left: 1.5rem;
+  text-align: right;
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 /* Footer */

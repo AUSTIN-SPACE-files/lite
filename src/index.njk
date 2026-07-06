@@ -17,15 +17,15 @@ layout: base.njk
   <div class="container contact-stats-grid">
     <a href="tel:{{ site.phone | replace(' ', '') }}" class="stat-item">
       {{ contactIcon("phone", "stat-icon") }}
-      <span class="stat-text">{{ site.phone }}</span>
+      <span class="stat-text mono-value">{{ site.phone }}</span>
     </a>
     <a href="mailto:{{ site.email }}" class="stat-item">
       {{ contactIcon("mail", "stat-icon") }}
-      <span class="stat-text stat-email">{{ site.email }}</span>
+      <span class="stat-text mono-value stat-email">{{ site.email }}</span>
     </a>
     <div class="stat-item">
       {{ contactIcon("map-pin", "stat-icon") }}
-      <span class="stat-text">{{ site.address }}</span>
+      <span class="stat-text mono-value">{{ site.address }}</span>
     </div>
   </div>
 </section>
@@ -51,25 +51,6 @@ layout: base.njk
     </div>
 
     <div class="contact-grid">
-      <address class="card contact-info-card">
-        <p class="section-label label-mono">Contact details</p>
-        <ul class="contact-list">
-          <li><a href="tel:{{ site.phone | replace(' ', '') }}" class="contact-list-row">{{ contactIcon("phone", "contact-icon", "2") }}<span>{{ site.phone }}</span></a></li>
-          <li><a href="mailto:{{ site.email }}" class="contact-list-row">{{ contactIcon("mail", "contact-icon", "2") }}<span>{{ site.email }}</span></a></li>
-          <li class="contact-list-row">{{ contactIcon("map-pin", "contact-icon", "2") }}<span>{{ site.address }}</span></li>
-        </ul>
-
-        <p class="section-label label-mono">Opening hours</p>
-        <dl class="hours-list">
-          {% for slot in site.hours %}
-          <div class="hours-row">
-            <dt>{{ slot.day }}</dt>
-            <dd>{{ slot.time }}</dd>
-          </div>
-          {% endfor %}
-        </dl>
-      </address>
-
       <div class="card contact-form-card">
         <p class="section-label label-mono">Get in touch</p>
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
@@ -79,23 +60,42 @@ layout: base.njk
           </p>
 
           <div>
-            <label for="name">Name</label>
+            <label for="name" class="field-label">Name</label>
             <input type="text" id="name" name="name" required>
           </div>
 
           <div>
-            <label for="email">Email</label>
+            <label for="email" class="field-label">Email</label>
             <input type="email" id="email" name="email" required>
           </div>
 
           <div>
-            <label for="message">Message</label>
+            <label for="message" class="field-label">Message</label>
             <textarea id="message" name="message" required></textarea>
           </div>
 
           <button type="submit">Send Message</button>
         </form>
       </div>
+
+      <address class="card contact-info-card">
+        <p class="section-label label-mono">Contact details</p>
+        <ul class="contact-list">
+          <li><a href="tel:{{ site.phone | replace(' ', '') }}" class="contact-list-row">{{ contactIcon("phone", "contact-icon", "2") }}<span class="mono-value">{{ site.phone }}</span></a></li>
+          <li><a href="mailto:{{ site.email }}" class="contact-list-row">{{ contactIcon("mail", "contact-icon", "2") }}<span class="mono-value">{{ site.email }}</span></a></li>
+          <li class="contact-list-row">{{ contactIcon("map-pin", "contact-icon", "2") }}<span class="mono-value">{{ site.address }}</span></li>
+        </ul>
+
+        <p class="section-label label-mono">Opening hours</p>
+        <dl class="hours-list">
+          {% for slot in site.hours %}
+          <div class="hours-row">
+            <dt class="field-label">{{ slot.day }}</dt>
+            <dd>{{ slot.time }}</dd>
+          </div>
+          {% endfor %}
+        </dl>
+      </address>
     </div>
   </div>
 </section>
