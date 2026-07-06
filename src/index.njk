@@ -25,7 +25,7 @@ layout: base.njk
     </a>
     <div class="stat-item">
       {{ contactIcon("map-pin", "stat-icon") }}
-      <span class="stat-text mono-value">{{ site.address }}</span>
+      <span class="stat-text mono-value">{{ site.streetAddress }}, {{ site.addressLocality }}, UK</span>
     </div>
   </div>
 </section>
@@ -42,7 +42,7 @@ layout: base.njk
       <p class="section-label label-mono">Visit us</p>
       <div class="map-wrap">
         <iframe
-          src="https://www.google.com/maps?q={{ site.address | urlencode }}&output=embed"
+          src="https://www.google.com/maps?q={{ (site.streetAddress ~ ', ' ~ site.addressLocality ~ ', UK') | urlencode }}&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Map to {{ site.businessName }} {{ site.businessDescriptor }}">
@@ -83,7 +83,7 @@ layout: base.njk
         <ul class="contact-list">
           <li><a href="tel:{{ site.phone | replace(' ', '') }}" class="contact-list-row">{{ contactIcon("phone", "contact-icon", "2") }}<span class="mono-value">{{ site.phone }}</span></a></li>
           <li><a href="mailto:{{ site.email }}" class="contact-list-row">{{ contactIcon("mail", "contact-icon", "2") }}<span class="mono-value">{{ site.email }}</span></a></li>
-          <li class="contact-list-row">{{ contactIcon("map-pin", "contact-icon", "2") }}<span class="mono-value">{{ site.address }}</span></li>
+          <li class="contact-list-row">{{ contactIcon("map-pin", "contact-icon", "2") }}<span class="mono-value">{{ site.streetAddress }}, {{ site.addressLocality }}, UK</span></li>
         </ul>
 
         <p class="section-label label-mono">Opening hours</p>
@@ -91,7 +91,7 @@ layout: base.njk
           {% for slot in site.hours %}
           <div class="hours-row">
             <dt class="field-label">{{ slot.day }}</dt>
-            <dd>{{ slot.time }}</dd>
+            <dd>{% if slot.closed %}Closed{% else %}{{ slot.open }} – {{ slot.close }}{% endif %}</dd>
           </div>
           {% endfor %}
         </dl>

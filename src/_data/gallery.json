@@ -1,6 +1,6 @@
 [
-  { "image": "interior.jpg", "alt": "Warm, wood-toned interior seating area at Maple & Bean" },
-  { "image": "latte-art.jpg", "alt": "Latte with rosetta art in a ceramic cup" },
-  { "image": "pastries.jpg", "alt": "Fresh croissants and scones in the pastry case" },
-  { "image": "counter.jpg", "alt": "The espresso counter and order area" }
+  { "image": "interior.jpg", "alt": "Warm, wood-toned interior seating area at Maple & Bean", "title": "Our Space", "description": "The relaxed café interior of Maple & Bean, Worcester." },
+  { "image": "latte-art.jpg", "alt": "Latte with rosetta art in a ceramic cup", "title": "Latte Art", "description": "Freshly poured latte art from our Worcester espresso bar." },
+  { "image": "pastries.jpg", "alt": "Fresh croissants and scones in the pastry case", "title": "Fresh Pastries", "description": "Croissants and cakes baked fresh daily in Worcester." },
+  { "image": "counter.jpg", "alt": "The espresso counter and order area", "title": "Friendly Service", "description": "A warm welcome at the counter of our Worcester coffee shop." }
 ]

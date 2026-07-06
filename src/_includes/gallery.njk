@@ -3,7 +3,17 @@
     <h2>Take a Look Inside</h2>
     <div class="gallery-grid">
       {% for item in gallery %}
-      <img src="/assets/images/gallery/{{ item.image }}" alt="{{ item.alt }}">
+      <figure class="gallery-item">
+        <a href="{% largeImageUrl "./src/assets/images/gallery/", item.image %}" class="glightbox" data-gallery="{{ site.businessName | slugify }}" data-title="{{ item.title }}" data-description="{{ item.description }}">
+          <img src="/assets/images/gallery/{{ item.image }}" alt="{{ item.alt }}" eleventy:widths="400" eleventy:formats="webp">
+        </a>
+        {% if item.title or item.description %}
+        <figcaption>
+          {% if item.title %}<span class="gallery-caption-title">{{ item.title }}</span>{% endif %}
+          {% if item.description %}<span class="gallery-caption-desc">{{ item.description }}</span>{% endif %}
+        </figcaption>
+        {% endif %}
+      </figure>
       {% endfor %}
     </div>
   </div>

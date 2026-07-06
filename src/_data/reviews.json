@@ -2,16 +2,19 @@
   {
     "name": "Jamie R.",
     "quote": "My go-to spot for a morning flat white. The staff remember your order after two visits.",
-    "rating": 5
+    "rating": 5,
+    "verified": false
   },
   {
     "name": "Priya S.",
     "quote": "Best almond croissant in the neighbourhood, hands down. I work from the back table most Fridays.",
-    "rating": 5
+    "rating": 5,
+    "verified": false
   },
   {
     "name": "Marcus T.",
     "quote": "Great coffee, and they did the catering for our office off-site — smooth from order to delivery.",
-    "rating": 4
+    "rating": 4,
+    "verified": false
   }
 ]
