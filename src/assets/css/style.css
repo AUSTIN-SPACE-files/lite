@@ -389,13 +389,32 @@ section h2 {
   font-size: 0.975rem;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
   .contact-stats-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-section .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .contact-form-card {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .field-label,
+  .form-privacy-note,
+  .form-status,
+  .form-success {
+    margin-inline: 0.65rem;
   }
 }
 
