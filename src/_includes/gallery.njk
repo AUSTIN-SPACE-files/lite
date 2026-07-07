@@ -2,9 +2,9 @@
   <div class="container">
     <h2>Take a Look Inside</h2>
     <div class="gallery-grid auto-grid">
-      {% for item in gallery %}
+      {% for item in galleryResolved %}
       <figure class="gallery-item">
-        <a href="{% largeImageUrl "./src/assets/images/gallery/", item.image %}" class="glightbox" data-gallery="{{ site.businessName | slugify }}" data-title="{{ item.title }}" data-description="{{ item.description }}">
+        <a href="{{ item.largeUrl }}" class="glightbox" data-gallery="{{ site.businessName | slugify }}" data-title="{{ item.title }}" data-description="{{ item.description }}">
           <img src="/assets/images/gallery/{{ item.image }}" alt="{{ item.alt }}" eleventy:widths="400" eleventy:formats="webp">
         </a>
         {% if item.title or item.description %}
