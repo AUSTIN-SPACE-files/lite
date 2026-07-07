@@ -474,6 +474,11 @@ section h2 {
   .contact-stats-grid {
     grid-template-columns: 1fr;
   }
+
+  .stat-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
 }
 
 @media (max-width: 400px) {
