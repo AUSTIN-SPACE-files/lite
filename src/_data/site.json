@@ -28,5 +28,7 @@
   "colorPrimary": "#4b3621",
   "colorAccent": "#c98a3b",
   "formWorkerUrl": "https://form-worker.charles-b9c.workers.dev",
-  "turnstileSiteKey": "0x4AAAAAADw3Hb6rRFZpnQ7Y"
+  "turnstileSiteKey": "0x4AAAAAADw3Hb6rRFZpnQ7Y",
+  "privacyContactEmail": "charles@austinspace.co.uk",
+  "policyLastUpdated": "7 July 2026"
 }

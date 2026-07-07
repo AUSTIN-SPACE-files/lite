@@ -12,6 +12,7 @@ export default {
 
   hasGallery: (data) =>
     data.hasGallery === false ? false : Array.isArray(data.gallery) && data.gallery.length > 0,
+  needsLightbox: (data) => Boolean(data.hasGallery || data.hasContactForm),
   galleryResolved: (data) => resolveGalleryImages(data.gallery),
   hasReviews: (data) => Array.isArray(data.reviews) && data.reviews.length > 0,
   hasServices: (data) => Array.isArray(data.services) && data.services.length > 0,

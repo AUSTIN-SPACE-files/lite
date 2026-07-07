@@ -460,6 +460,11 @@ section h2 {
   margin: 0;
 }
 
+.form-privacy-note {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
 .form-status.is-error {
   color: var(--color-error);
 }
@@ -628,6 +633,12 @@ address {
   font-size: 0.85rem;
 }
 
+.footer-privacy-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
 .credit-logo {
   height: 28px;
   width: auto;
@@ -660,6 +671,15 @@ address {
     flex-direction: column;
     text-align: center;
   }
+}
+
+/* Privacy policy inline content — GLightbox inline target + no-JS #privacy fallback */
+#privacy {
+  display: none;
+}
+
+#privacy:target {
+  display: block;
 }
 
 /* GLightbox dark skin override — scoped to GLightbox's own container/skin classes */

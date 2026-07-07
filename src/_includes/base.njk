@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="{{ heroImageUrl }}">
   <meta name="theme-color" content="{{ site.colorPrimary }}">
   <link rel="stylesheet" href="/assets/css/style.css">
-  {% if hasGallery %}<link rel="stylesheet" href="/assets/vendor/glightbox/glightbox.min.css">{% endif %}
+  {% if needsLightbox %}<link rel="stylesheet" href="/assets/vendor/glightbox/glightbox.min.css">{% endif %}
   {% if hasContactForm %}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>{% endif %}
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
@@ -62,15 +62,18 @@
     <div class="footer-credit-row">
       <div class="container footer-credit">
         <p class="footer-note">&copy; {% year %} {{ siteName }} &mdash; All rights reserved.</p>
+        <a href="#privacy" class="glightbox footer-privacy-link">Privacy</a>
         <a href="https://austinspace.co.uk" target="_blank" rel="noopener noreferrer" class="credit-logo-link">
           <span>Site by</span>
           <img src="/assets/images/AS_Logo.svg" alt="AUSTIN_SPACE" class="credit-logo" eleventy:ignore>
         </a>
       </div>
     </div>
+
+    {% include "privacy-content.njk" %}
   </footer>
 
-  {% if hasGallery %}
+  {% if needsLightbox %}
   <script src="/assets/vendor/glightbox/glightbox.min.js"></script>
   <script>GLightbox({ selector: '.glightbox' });</script>
   {% endif %}

@@ -1,0 +1,22 @@
+<section id="privacy">
+  <div class="container">
+    <h2>Privacy Policy</h2>
+
+    <p>{{ site.businessName }} ("we", "us") is responsible for the personal information collected through this website. This notice explains what we collect, why, and your rights over it.</p>
+
+    {% for section in privacyPolicy.sections %}
+    <h3>{{ section.heading }}</h3>
+    {{ section.body | safe }}
+    {% endfor %}
+
+    <h3>Your rights</h3>
+    {{ privacyPolicy.rightsIntro | safe }}
+    <p>To make any of these requests, contact us at <a href="mailto:{{ site.privacyContactEmail }}">{{ site.privacyContactEmail }}</a>. Day-to-day handling of privacy requests for this site is carried out on our behalf by our website provider, Austin Space — but {{ site.businessName }} remains responsible for your information as the data controller.</p>
+    {{ privacyPolicy.rightsComplaint | safe }}
+
+    <h3>Changes</h3>
+    {{ privacyPolicy.changes | safe }}
+
+    <p class="privacy-updated">Last updated: {{ site.policyLastUpdated }}</p>
+  </div>
+</section>
