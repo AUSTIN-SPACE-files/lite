@@ -675,6 +675,25 @@ address {
   color: #a1a1a1;
 }
 
+/* 404 */
+.not-found-section {
+  text-align: center;
+}
+
+.not-found-section h1 {
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  margin: 0 0 1rem;
+}
+
+.not-found-section p {
+  color: var(--color-text-muted);
+}
+
+.not-found-section a {
+  color: var(--color-accent);
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
