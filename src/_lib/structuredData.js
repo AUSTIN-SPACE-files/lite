@@ -48,7 +48,7 @@ function prune(value) {
 
 // Resolves the hero image through the same eleventy-img pipeline used
 // elsewhere in the build, so the URL is one the build actually publishes.
-async function heroImageUrl(site) {
+export async function heroImageUrl(site) {
   if (!site.heroImage) return undefined;
   const metadata = await Image(`./src/assets/images/${site.heroImage}`, {
     widths: ["auto"],
@@ -60,7 +60,7 @@ async function heroImageUrl(site) {
 // Called from src/_data/eleventyComputed.js with the already-resolved
 // Eleventy data cascade — site/services/reviews/social are read once, by
 // Eleventy's own data loader, not re-parsed from disk here.
-export async function buildStructuredData(data) {
+export function buildStructuredData(data) {
   const { site, services, reviews, social, siteName } = data;
 
   const businessId = `${site.url}#business`;
@@ -99,7 +99,7 @@ export async function buildStructuredData(data) {
             longitude: site.longitude,
           }
         : undefined,
-    image: [await heroImageUrl(site)],
+    image: [data.heroImageUrl],
     openingHoursSpecification,
     makesOffer: (services || []).map((service) => ({
       "@type": "Offer",

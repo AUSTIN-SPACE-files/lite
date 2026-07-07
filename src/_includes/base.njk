@@ -1,12 +1,25 @@
 {% from "brand-icon.njk" import render as brandIcon %}
 {% from "brand-mark.njk" import render as brandMark, viewBox as brandMarkViewBox %}
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ siteName }}{% if site.metaTitleSuffix %} | {{ site.metaTitleSuffix }}{% endif %}</title>
+  <title>{{ pageTitle }}</title>
   <meta name="description" content="{{ site.metaDescription }}">
+  <link rel="canonical" href="{{ canonicalUrl }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ site.metaDescription }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ canonicalUrl }}">
+  <meta property="og:image" content="{{ heroImageUrl }}">
+  <meta property="og:site_name" content="{{ siteName }}">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ site.metaDescription }}">
+  <meta name="twitter:image" content="{{ heroImageUrl }}">
+  <meta name="theme-color" content="{{ site.colorPrimary }}">
   <link rel="stylesheet" href="/assets/css/style.css">
   {% if hasGallery %}<link rel="stylesheet" href="/assets/vendor/glightbox/glightbox.min.css">{% endif %}
   {% if hasContactForm %}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>{% endif %}
