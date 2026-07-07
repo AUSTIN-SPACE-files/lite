@@ -3,6 +3,8 @@ layout: base.njk
 hasContactForm: true
 ---
 {% from "contact-icons.njk" import render as contactIcon %}
+{% from "brand-icon.njk" import render as brandIcon %}
+{% from "brand-mark.njk" import render as brandMark, viewBox as brandMarkViewBox %}
 <section class="hero">
   <img class="hero-bg" src="/assets/images/{{ site.heroImage }}" alt="" loading="eager">
   <div class="hero-overlay"></div>
@@ -15,6 +17,9 @@ hasContactForm: true
 </section>
 
 <section class="contact-stats">
+  <div class="contact-stats-texture" aria-hidden="true">
+    {% call brandIcon("stat-watermark-icon", brandMarkViewBox()) %}{{ brandMark(site.businessName) }}{% endcall %}
+  </div>
   <div class="container contact-stats-grid">
     <a href="tel:{{ site.phone | replace(' ', '') }}" class="stat-item">
       {{ contactIcon("phone", "stat-icon") }}

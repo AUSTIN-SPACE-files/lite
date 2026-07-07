@@ -153,6 +153,18 @@ a {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 480px) {
+  .logo.hero-heading {
+    --logo-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: min(48vh, 400px);
+  }
+}
+
 /* Sections */
 section {
   padding: 3.5rem 0;
@@ -285,6 +297,13 @@ section h2 {
   }
 }
 
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    --grid-gap: 0.5rem;
+  }
+}
+
 /* Reviews */
 .reviews-grid {
   --grid-min: 240px;
@@ -325,6 +344,7 @@ section h2 {
     --fade-w: 3rem;
     display: flex;
     gap: var(--grid-gap, 1.75rem);
+    padding-bottom: 1.75rem;
     overflow-x: auto;
     scroll-snap-type: x proximity;
     scroll-padding-inline-end: var(--fade-w);
@@ -343,6 +363,13 @@ section h2 {
   .reviews-grid::after {
     content: "";
     flex: 0 0 var(--fade-w);
+  }
+
+  #services,
+  #reviews {
+    /* offsets .services-grid/.reviews-grid's new bottom padding above, so the
+       gap to the next section stays at the site's normal 7rem rhythm */
+    padding-bottom: 1.75rem;
   }
 }
 
@@ -390,9 +417,30 @@ section h2 {
   color: #fff;
   padding: 1.5rem 0;
   animation-name: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-stats-texture {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%) rotate(-18deg);
+  opacity: 0.06;
+  color: #fff;
+  pointer-events: none;
+  z-index: 0;
+  line-height: 0;
+}
+
+.stat-watermark-icon {
+  width: 200px;
+  height: 200px;
 }
 
 .contact-stats-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
