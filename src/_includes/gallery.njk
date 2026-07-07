@@ -1,7 +1,7 @@
 <section id="gallery">
   <div class="container">
     <h2>Take a Look Inside</h2>
-    <div class="gallery-grid">
+    <div class="gallery-grid auto-grid">
       {% for item in gallery %}
       <figure class="gallery-item">
         <a href="{% largeImageUrl "./src/assets/images/gallery/", item.image %}" class="glightbox" data-gallery="{{ site.businessName | slugify }}" data-title="{{ item.title }}" data-description="{{ item.description }}">

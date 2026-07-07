@@ -13,8 +13,9 @@ A reusable one-page business website template built on [Eleventy 3](https://www.
    - `social.json` — object of `{ platform: url }`. Only platforms present here render in the footer icon row. Supported platform keys are defined in `src/_includes/social.njk` (`facebook`, `instagram`, `twitter`, `linkedin`, `youtube`, `tiktok`).
 3. Drop the client's real photos into `src/assets/images/gallery/` (replacing the placeholder JPGs) and update `gallery.json` to match. Eleventy Image will automatically generate optimized WebP + srcset versions at build time — just use normal JPG/PNG source files.
 4. If the client wants different service icons, add more inline SVGs to the `icons` map at the top of `src/_includes/services.njk`.
+5. Brand mark — replace the default monogram in `src/_includes/brand-icon.njk` with the client's real logo (SVG, inherits `currentColor`, so a replacement needs to follow the same convention or it won't pick up `colorPrimary`/`colorAccent`).
 
-No template/HTML/CSS edits should be needed for a standard re-skin.
+No further template/HTML/CSS edits should be needed for a standard re-skin.
 
 ## Commands
 

@@ -7,9 +7,9 @@
 <section id="services">
   <div class="container">
     <h2>What We Offer</h2>
-    <div class="services-grid">
+    <div class="services-grid auto-grid">
       {% for service in services %}
-      <div class="service-card">
+      <div class="service-card card">
         {{ icons[service.icon] | safe }}
         <h3>{{ service.title }}</h3>
         <p>{{ service.blurb }}</p>
