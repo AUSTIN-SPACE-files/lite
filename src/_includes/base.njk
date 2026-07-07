@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.businessName }} {{ site.businessDescriptor }}{% if site.metaTitleSuffix %} | {{ site.metaTitleSuffix }}{% endif %}</title>
+  <title>{{ siteName }}{% if site.metaTitleSuffix %} | {{ site.metaTitleSuffix }}{% endif %}</title>
   <meta name="description" content="{{ site.metaDescription }}">
   <link rel="stylesheet" href="/assets/css/style.css">
-  {% if gallery and gallery.length %}<link rel="stylesheet" href="/assets/vendor/glightbox/glightbox.min.css">{% endif %}
+  {% if hasGallery %}<link rel="stylesheet" href="/assets/vendor/glightbox/glightbox.min.css">{% endif %}
   {% if hasContactForm %}<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>{% endif %}
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
@@ -35,7 +35,7 @@
   <footer class="site-footer">
     <div class="container footer-main">
       <div class="footer-texture" aria-hidden="true">
-        {{ brandIcon("footer-watermark-icon") }}
+        {{ brandIcon("footer-watermark-icon", site.businessName) }}
       </div>
       <div class="footer-content">
         {% include "logo.njk" %}
@@ -46,7 +46,7 @@
 
     <div class="footer-credit-row">
       <div class="container footer-credit">
-        <p class="footer-note">&copy; {% year %} {{ site.businessName }} {{ site.businessDescriptor }} &mdash; All rights reserved.</p>
+        <p class="footer-note">&copy; {% year %} {{ siteName }} &mdash; All rights reserved.</p>
         <a href="https://austinspace.co.uk" target="_blank" rel="noopener noreferrer" class="credit-logo-link">
           <span>Site by</span>
           <img src="/assets/images/AS_Logo.svg" alt="AUSTIN_SPACE" class="credit-logo" eleventy:ignore>
@@ -55,7 +55,7 @@
     </div>
   </footer>
 
-  {% if gallery and gallery.length %}
+  {% if hasGallery %}
   <script src="/assets/vendor/glightbox/glightbox.min.js"></script>
   <script>GLightbox({ selector: '.glightbox' });</script>
   {% endif %}

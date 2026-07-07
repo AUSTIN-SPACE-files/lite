@@ -24,32 +24,36 @@ hasContactForm: true
       {{ contactIcon("mail", "stat-icon") }}
       <span class="stat-text mono-value stat-email">{{ site.email }}</span>
     </a>
+    {% if hasAddress %}
     <div class="stat-item">
       {{ contactIcon("map-pin", "stat-icon") }}
-      <span class="stat-text mono-value">{{ site.streetAddress }}, {{ site.addressLocality }}, UK</span>
+      <span class="stat-text mono-value">{{ site.streetAddress }}, {{ site.addressLocality }}, {{ site.addressCountryDisplay }}</span>
     </div>
+    {% endif %}
   </div>
 </section>
 
-{% include "services.njk" %}
-{% include "gallery.njk" %}
-{% include "reviews.njk" %}
+{% if hasServices %}{% include "services.njk" %}{% endif %}
+{% if hasGallery %}{% include "gallery.njk" %}{% endif %}
+{% if hasReviews %}{% include "reviews.njk" %}{% endif %}
 
 <section class="contact-section" id="contact">
   <div class="container">
     <h2>Visit or Say Hello</h2>
 
+    {% if hasAddress %}
     <div class="card map-card">
       <p class="section-label label-mono">Visit us</p>
       <div class="map-wrap">
         <iframe
-          src="https://www.google.com/maps?q={{ (site.streetAddress ~ ', ' ~ site.addressLocality ~ ', UK') | urlencode }}&output=embed"
+          src="https://www.google.com/maps?q={{ (site.streetAddress ~ ', ' ~ site.addressLocality ~ ', ' ~ site.addressCountryDisplay) | urlencode }}&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Map to {{ site.businessName }} {{ site.businessDescriptor }}">
+          title="Map to {{ siteName }}">
         </iframe>
       </div>
     </div>
+    {% endif %}
 
     <div class="contact-grid">
       <div class="card contact-form-card">
@@ -87,9 +91,10 @@ hasContactForm: true
         <ul class="contact-list">
           <li><a href="tel:{{ site.phone | replace(' ', '') }}" class="contact-list-row">{{ contactIcon("phone", "contact-icon", "2") }}<span class="mono-value">{{ site.phone }}</span></a></li>
           <li><a href="mailto:{{ site.email }}" class="contact-list-row">{{ contactIcon("mail", "contact-icon", "2") }}<span class="mono-value">{{ site.email }}</span></a></li>
-          <li class="contact-list-row">{{ contactIcon("map-pin", "contact-icon", "2") }}<span class="mono-value">{{ site.streetAddress }}, {{ site.addressLocality }}, UK</span></li>
+          {% if hasAddress %}<li class="contact-list-row">{{ contactIcon("map-pin", "contact-icon", "2") }}<span class="mono-value">{{ site.streetAddress }}, {{ site.addressLocality }}, {{ site.addressCountryDisplay }}</span></li>{% endif %}
         </ul>
 
+        {% if hasHours %}
         <p class="section-label label-mono">Opening hours</p>
         <dl class="hours-list">
           {% for slot in site.hours %}
@@ -99,6 +104,7 @@ hasContactForm: true
           </div>
           {% endfor %}
         </dl>
+        {% endif %}
       </address>
     </div>
   </div>

@@ -9,6 +9,7 @@
   "addressLocality": "Worcester",
   "postalCode": "WR1 2QX",
   "addressCountry": "GB",
+  "addressCountryDisplay": "UK",
   "latitude": 52.1936,
   "longitude": -2.2216,
   "heroImage": "hero.jpg",

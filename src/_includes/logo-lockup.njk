@@ -1,5 +1,5 @@
 {% from "brand-icon.njk" import render as brandIcon %}
-{{ brandIcon("logo-icon") }}
+{{ brandIcon("logo-icon", site.businessName) }}
 <span class="logo-text">
   <span class="logo-name">{{ site.businessName }}</span>
   <span class="logo-descriptor label-mono">{{ site.businessDescriptor }}</span>
