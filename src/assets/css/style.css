@@ -163,6 +163,10 @@ a {
   .hero {
     height: min(48vh, 400px);
   }
+
+  .hero-tagline {
+    text-wrap: balance;
+  }
 }
 
 /* Sections */
