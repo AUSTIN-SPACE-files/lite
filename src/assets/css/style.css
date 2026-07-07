@@ -464,6 +464,7 @@ section h2 {
 .form-privacy-note {
   color: var(--color-text-muted);
   font-size: 0.85rem;
+  margin: 0;
 }
 
 .form-status.is-error {
