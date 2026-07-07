@@ -7,7 +7,7 @@
 <section id="services">
   <div class="container">
     <h2>What We Offer</h2>
-    <div class="services-grid auto-grid">
+    <div class="services-grid auto-grid" tabindex="0" role="group" aria-label="What we offer">
       {% for service in services %}
       <div class="service-card card">
         {{ icons[service.icon] | safe }}

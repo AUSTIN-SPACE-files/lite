@@ -1,7 +1,7 @@
 <section id="reviews">
   <div class="container">
     <h2>What Neighbours Say</h2>
-    <div class="reviews-grid auto-grid">
+    <div class="reviews-grid auto-grid" tabindex="0" role="group" aria-label="Customer reviews">
       {% for review in reviews %}
       <div class="review-card card">
         <p class="stars">{% for n in range(0, review.rating) %}&#9733;{% endfor %}{% for n in range(review.rating, 5) %}&#9734;{% endfor %}</p>
