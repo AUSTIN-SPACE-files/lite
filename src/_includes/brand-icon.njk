@@ -1,6 +1,7 @@
-{# Neutral placeholder mark, derived from the client's own business name so
-   it's never wrong for a given vertical — swap for the client's real logo
-   before launch (see the re-skin checklist). Takes `name` explicitly rather
-   than reading `site` implicitly, since this macro is imported without
-   `with context` at its call sites. #}
-{% macro render(className, name) %}<svg class="{{ className }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="12" y="12.5" text-anchor="middle" dominant-baseline="central" fill="currentColor" font-family="ui-serif, Georgia, serif" font-size="12">{{ name | first | upper }}</text></svg>{% endmacro %}
+{# Generic SVG shell — sizing/class/viewBox only, never a mark of its own.
+   The mark lives in brand-mark.njk's slot; this macro just wraps whatever
+   that slot renders via {% call %}/caller(). `viewBox` defaults to Lucide's
+   native 24×24 grid — a mark sourced from a different coordinate space
+   (most Font Awesome icons) passes its own via brand-mark.njk's viewBox()
+   macro, so the shell's own signature never has to change per client. #}
+{% macro render(className, viewBox="0 0 24 24") %}<svg class="{{ className }}" xmlns="http://www.w3.org/2000/svg" viewBox="{{ viewBox }}">{{ caller() }}</svg>{% endmacro %}

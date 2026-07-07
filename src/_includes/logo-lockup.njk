@@ -1,5 +1,6 @@
 {% from "brand-icon.njk" import render as brandIcon %}
-{{ brandIcon("logo-icon", site.businessName) }}
+{% from "brand-mark.njk" import render as brandMark, viewBox as brandMarkViewBox %}
+{% call brandIcon("logo-icon", brandMarkViewBox()) %}{{ brandMark(site.businessName) }}{% endcall %}
 <span class="logo-text">
   <span class="logo-name">{{ site.businessName }}</span>
   <span class="logo-descriptor label-mono">{{ site.businessDescriptor }}</span>

@@ -13,7 +13,7 @@ A reusable one-page business website template built on [Eleventy 3](https://www.
    - `social.json` — object of `{ platform: url }`. Only platforms present here render in the footer icon row. Supported platform keys are defined in `src/_includes/social.njk` (`facebook`, `instagram`, `twitter`, `linkedin`, `youtube`, `tiktok`).
 3. Drop the client's real photos into `src/assets/images/gallery/` (replacing the placeholder JPGs) and update `gallery.json` to match. Eleventy Image will automatically generate optimized WebP + srcset versions at build time — just use normal JPG/PNG source files.
 4. If the client wants different service icons, add more inline SVGs to the `icons` map at the top of `src/_includes/services.njk`.
-5. Brand mark — replace the default monogram in `src/_includes/brand-icon.njk` with the client's real logo (SVG, inherits `currentColor`, so a replacement needs to follow the same convention or it won't pick up `colorPrimary`/`colorAccent`).
+5. Brand mark — edit `src/_includes/brand-mark.njk` (not `brand-icon.njk`, which is shared structure). Paste the inline SVG from Lucide (zero-adjustment, it's already on a 24×24 grid) or Font Awesome (also copy the source SVG's `viewBox` attribute into the `viewBox()` macro at the bottom of `brand-mark.njk`, so the glyph's coordinate space matches) — both inherit `currentColor`, so no colour edits are needed. If sourcing elsewhere, make sure the SVG uses `currentColor` (not a hardcoded hex) and is single-colour.
 
 No further template/HTML/CSS edits should be needed for a standard re-skin.
 
