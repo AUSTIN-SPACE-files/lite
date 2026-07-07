@@ -96,15 +96,17 @@ hasContactForm: true
         </ul>
 
         {% if hasHours %}
-        <p class="section-label label-mono">Opening hours</p>
-        <dl class="hours-list">
-          {% for slot in site.hours %}
-          <div class="hours-row">
-            <dt class="field-label">{{ slot.day }}</dt>
-            <dd>{% if slot.closed %}Closed{% else %}{{ slot.open }} – {{ slot.close }}{% endif %}</dd>
-          </div>
-          {% endfor %}
-        </dl>
+        <p class="section-label label-mono" id="hours-heading">Opening hours</p>
+        <table class="hours-table" aria-labelledby="hours-heading">
+          <tbody>
+            {% for slot in site.hours %}
+            <tr>
+              <th scope="row">{{ slot.day }}</th>
+              <td>{% if slot.closed %}Closed{% else %}{{ slot.open }} – {{ slot.close }}{% endif %}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
         {% endif %}
       </address>
     </div>
