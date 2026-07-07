@@ -621,6 +621,12 @@ address {
   padding: 1.25rem 0;
 }
 
+.footer-credit-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .credit-logo-link {
   display: inline-flex;
   align-items: center;
@@ -667,6 +673,10 @@ address {
   .footer-credit {
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer-credit-left {
+    flex-direction: column;
   }
 }
 
