@@ -301,13 +301,6 @@ section h2 {
   }
 }
 
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    --grid-gap: 1rem;
-  }
-}
-
 /* Reviews */
 .reviews-grid {
   --grid-min: 240px;
@@ -340,10 +333,11 @@ section h2 {
   font-size: 0.9rem;
 }
 
-/* Services + Reviews mobile/tablet carousel (≤768px) */
+/* Services + Reviews + Gallery mobile/tablet carousel (≤768px) */
 @media (max-width: 768px) {
   .services-grid,
-  .reviews-grid {
+  .reviews-grid,
+  .gallery-grid {
     --card-w: min(70vw, 280px);
     --fade-w: 3rem;
     display: flex;
@@ -358,21 +352,24 @@ section h2 {
   }
 
   .services-grid .service-card,
-  .reviews-grid .review-card {
+  .reviews-grid .review-card,
+  .gallery-grid .gallery-item {
     flex: 0 0 var(--card-w);
     scroll-snap-align: start;
   }
 
   .services-grid::after,
-  .reviews-grid::after {
+  .reviews-grid::after,
+  .gallery-grid::after {
     content: "";
     flex: 0 0 var(--fade-w);
   }
 
   #services,
-  #reviews {
-    /* offsets .services-grid/.reviews-grid's new bottom padding above, so the
-       gap to the next section stays at the site's normal 7rem rhythm */
+  #reviews,
+  #gallery {
+    /* offsets the row's new bottom padding above, so the gap to the next
+       section stays at the site's normal 7rem rhythm */
     padding-bottom: 1.75rem;
   }
 }
@@ -489,6 +486,23 @@ section h2 {
   .stat-item {
     justify-content: flex-start;
     text-align: left;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .contact-stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stat-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .stat-text {
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -747,7 +761,7 @@ address {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.25rem 0;
+  padding-block: 1.25rem;
 }
 
 .credit-logo-link {
