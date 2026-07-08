@@ -301,7 +301,7 @@ section h2 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     --grid-gap: 1rem;
@@ -474,7 +474,9 @@ section h2 {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+}
 
+@media (max-width: 600px) {
   .contact-stats {
     padding-block: 1rem;
   }
