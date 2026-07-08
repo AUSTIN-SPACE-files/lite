@@ -475,8 +475,13 @@ section h2 {
     grid-template-columns: 1fr;
   }
 
+  .contact-stats {
+    padding-block: 1rem;
+  }
+
   .contact-stats-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .stat-item {
