@@ -748,12 +748,6 @@ address {
   padding: 1.25rem 0;
 }
 
-.footer-credit-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
 .credit-logo-link {
   display: inline-flex;
   align-items: center;
@@ -792,8 +786,12 @@ address {
 
 .footer-note {
   font-size: 0.85rem;
-  opacity: 0.75;
+  color: rgba(255, 255, 255, 0.75);
   margin: 0;
+}
+
+.footer-note-sep {
+  color: rgba(255, 255, 255, 0.45);
 }
 
 @media (max-width: 720px) {
@@ -802,8 +800,8 @@ address {
     text-align: center;
   }
 
-  .footer-credit-left {
-    flex-direction: column;
+  .footer-note {
+    text-wrap: balance;
   }
 }
 
