@@ -729,6 +729,13 @@ address {
   line-height: 1.5;
 }
 
+@media (max-width: 768px) {
+  .footer-blurb {
+    max-width: 300px;
+    text-wrap: balance;
+  }
+}
+
 .footer-credit-row {
   background: #1a1512;
 }
